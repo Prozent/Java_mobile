@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Skreen_sign_in">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -67,6 +68,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="50dp"
+            android:onClick="klic_json"
             android:text="Sign in" />
 
     </LinearLayout>

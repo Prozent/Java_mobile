@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Thread welcomeThread = new Thread() {
             @Override
             public void run() {
@@ -21,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
 
                 } finally {
-
-                    Intent i = new Intent(MainActivity.this,Skreen_sign_in.class);
+                    Intent i = new Intent(MainActivity.this, Skreen_sign_in.class);
                     startActivity(i);
                     finish();
                 }
@@ -30,4 +29,5 @@ public class MainActivity extends AppCompatActivity {
         };
         welcomeThread.start();
     }
+
 }
