@@ -6,13 +6,20 @@ import java.net.URL;
 
 import java.util.Scanner;
 
+import javax.net.ssl.HttpsURLConnection;
+
+
+
+
+
 public class Networc_conect {
     public static String getPersonData() throws IOException {
 
-        HttpURLConnection connection = (HttpURLConnection) new URL("http://jsonplaceholder.typicode.com/posts").openConnection();
+        URL githubEndpoint = new URL("http://localhost:3000/login");
+        HttpsURLConnection connection =(HttpsURLConnection) githubEndpoint.openConnection();
 
         connection.setRequestMethod("GET");
-
+//304
         int responseCode = connection.getResponseCode();
         if(responseCode == 200){
             String response = "";
@@ -23,10 +30,13 @@ public class Networc_conect {
             }
             scanner.close();
 
+            connection.disconnect();
             return response;
         }
 
         // an error happened
+        connection.disconnect();
         return null;
+
     }
 }
