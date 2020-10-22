@@ -44,10 +44,12 @@
         app:layout_constraintVertical_bias="0.0">
 
         <include
+            android:id="@+id/login"
             layout="@layout/login_layout"
             android:gravity="center" />
 
         <include
+            android:id="@+id/password"
             layout="@layout/pass_loyout"
             android:gravity="center" />
 
@@ -58,18 +60,33 @@
             android:layout_marginTop="20dp"
             android:gravity="center"
 
+            android:onClick="authorization"
             android:text="Forgot Password ?"
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/bt_sign_in"
+            android:id="@+id/bt_GET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="50dp"
-            android:onClick="Clic_button"
+            android:onClick="authorization"
             android:text="Sign in" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="30sp"/>
+
+        <Button
+            android:id="@+id/button_POST"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="authorization_json_convert"
+            android:text="Button" />
 
     </LinearLayout>
 
