@@ -31,6 +31,8 @@ import java.net.URL;
 
 
 
+
+
 public class Skreen_sign_in extends AppCompatActivity {
 
 
@@ -107,16 +109,29 @@ public class Skreen_sign_in extends AppCompatActivity {
 
 
         RequestQueue requestQueue= Volley.newRequestQueue(this);
-        JsonArrayRequest getRequest = new JsonArrayRequest(Request.Method.POST, URL, obj
-                ,
+        JsonObjectRequest getReqst = new JsonObjectRequest(1, URL, obj,
+
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        String firstname = null;
+                        TextView login=findViewById(R.id.textView2);
+                        //login.setText(response.toString());
+                        try {
+                            firstname = response.getString("data");
+                            login.setText(firstname.split(",")[0].split(":")[1]);
+                            //firstname.split(",");
+
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
 
                     }
-                }
-
-                ,
+                },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
@@ -124,7 +139,9 @@ public class Skreen_sign_in extends AppCompatActivity {
                     }
                 }
         );
-        requestQueue.add(getRequest);
+
+
+        requestQueue.add(getReqst);
 
         }
 
