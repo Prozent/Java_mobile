@@ -1,0 +1,8 @@
+это если мы отправляем обект и получать должны 1 обект JsonObjectRequest getReqst = new JsonObjectRequest(1, URL, obj,new Response.Listener<JSONObject>(),new Response.ErrorListener()
+
+это если мы получаем лист и отправляем лист, запрос гет
+JsonArrayRequest getRequest = new JsonArrayRequest(Request.Method.GET, URL, null,Response.Listener<JSONArray>(),new Response.ErrorListener()
+
+Это нужно вписывать в грейдл
+ compile 'com.google.code.gson:gson:2.8.5'
+ implementation 'com.android.volley:volley:1.1.1'

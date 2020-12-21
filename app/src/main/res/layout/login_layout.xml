@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/ktqzj8_tif_1_" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextTextPersonName_login"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center"

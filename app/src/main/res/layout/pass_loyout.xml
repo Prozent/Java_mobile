@@ -15,7 +15,7 @@
         app:srcCompat="@drawable/amkpvd_tif_1_" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextTextPersonName_passord"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_weight="1"
