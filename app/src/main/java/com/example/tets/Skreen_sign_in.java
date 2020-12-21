@@ -97,7 +97,7 @@ public class Skreen_sign_in extends AppCompatActivity {
         TextView login=findViewById(R.id.textView2);
 
         JSONArray list = new JSONArray();
-        String URL= "http://httpbin.org/post";
+        String URL= "http://cars.areas.su/login";
         JSONObject obj = new JSONObject();
         try {
             obj.put("username",login_1.getText());
@@ -114,19 +114,23 @@ public class Skreen_sign_in extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        String firstname = null;
                         TextView login=findViewById(R.id.textView2);
-                        //login.setText(response.toString());
-                        try {
-                            firstname = response.getString("data");
-                            login.setText(firstname.split(",")[0].split(":")[1]);
-                            //firstname.split(",");
-
-
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
+                        String firstname = response.toString();
+                        login.setText(firstname);
+                        Intent i = new Intent(Skreen_sign_in.this, My_maps.class);
+                        startActivity(i);
+                        finish();
+//                        //login.setText(response.toString());
+//                        try {
+//                            firstname = response.getString("data");1
+//                            login.setText(firstname.split(",")[0].split(":")[1]);
+//                            //firstname.split(",");
+//
+//
+//
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
 
 
 
